@@ -114,32 +114,16 @@ public class iniciosesion extends AppCompatActivity {
             }
         });
 
-        /*irApp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String userS, passS;
-                userS = String.valueOf(user.getText());
-                passS = String.valueOf(pass.getText());
-                if (userS.equals("admin") && passS.equals("admin")) {
-                    Intent intent = new Intent(context, VentInicial.class);
-                    context.startActivity(intent);
-                } else {
-                    Toast.makeText(iniciosesion.this, "La cuenta introducida no existe", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });*/
+
     }
 
     private void loginUserAccount()
     {
 
-
-        // Take the value of two edit texts in Strings
         String email, password;
         email = user.getText().toString();
         password = pass.getText().toString();
 
-        // validations for input email and password
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(getApplicationContext(),
                             "Introduce un mail",
@@ -156,27 +140,7 @@ public class iniciosesion extends AppCompatActivity {
             return;
         }
 
-        // signin existing user
-        /*mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "signInWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
 
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(iniciosesion.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-
-                        }
-                    }
-                });
-
-         */
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(
                         new OnCompleteListener<AuthResult>() {
@@ -191,8 +155,6 @@ public class iniciosesion extends AppCompatActivity {
                                             .show();
 
 
-                                    // if sign-in is successful
-                                    // intent to home activity
                                     Intent intent
                                             = new Intent(iniciosesion.this,
                                             VentInicial.class);
@@ -201,7 +163,6 @@ public class iniciosesion extends AppCompatActivity {
 
                                 else {
 
-                                    // sign-in failed
                                     Toast.makeText(getApplicationContext(),
                                                     "Login fallido",
                                                     Toast.LENGTH_LONG)
@@ -238,10 +199,9 @@ public class iniciosesion extends AppCompatActivity {
                                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                                     @Override
                                     public void onComplete(@NonNull Task<AuthResult> task) {
-                                        // Check condition
+
                                         if (task.isSuccessful()) {
-                                            // When task is successful
-                                            // Redirect to profile activity
+
                                             startActivity(new Intent(context
                                                     , VentInicial.class)
                                                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
@@ -268,12 +228,4 @@ public class iniciosesion extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
     }
 
-    /*protected void onStart() {
-        super.onStart();
-        FirebaseUser user = mAuth.getCurrentUser();
-        if (user != null){
-            startActivity(new Intent(iniciosesion.this, VentInicial.class));
-            //finish();
-        }
-    }*/
 }
