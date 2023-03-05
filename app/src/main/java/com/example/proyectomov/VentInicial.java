@@ -21,13 +21,12 @@ public class VentInicial extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
 
-    //barra de busqueda no funcional aún
+    //barra de busqueda solo diseño
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vent_inicial);
-        //replaceFragment(new ItemListFragment());
         replaceFragment(new ItemListFragment());
         Realm.init(this);
         String realmName = "ProyectoMov";

@@ -1,6 +1,5 @@
 package com.example.proyectomov;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -14,23 +13,12 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserInfo;
 
-import java.util.Objects;
-
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link userFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class userFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -42,18 +30,9 @@ public class userFragment extends Fragment {
 
 
     public userFragment() {
-        // Required empty public constructor
+
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment userFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static userFragment newInstance(String param1, String param2) {
         userFragment fragment = new userFragment();
         Bundle args = new Bundle();
@@ -83,18 +62,17 @@ public class userFragment extends Fragment {
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
 
-        String name = user.getDisplayName();
+        String name = user.getEmail();
 
-        //no muestra
-        //txtUsuario.setText("Nombre de usuario: "+name);
-        txtUsuario.setText(name);
+        txtUsuario.setText("Email: "+name);
+
 
 
 
         cierre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                firebaseAuth.getInstance().signOut();
+                firebaseAuth.signOut();
 
                 Intent intent = new Intent(getActivity(), MainActivity.class);
                 startActivity(intent);

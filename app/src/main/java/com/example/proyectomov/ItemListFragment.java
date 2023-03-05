@@ -26,7 +26,6 @@ import io.realm.RealmResults;
 
 public class ItemListFragment extends Fragment {
 
-    View rootView;
     VentInicial context;
 
     Realm realm;
@@ -44,11 +43,6 @@ public class ItemListFragment extends Fragment {
         this.context = (VentInicial) context;
         super.onAttach(context);
     }
-
-    /*public static ItemListFragment newInstance() {
-        ItemListFragment itemsListFragment = new ItemListFragment();
-        return itemsListFragment;
-    }*/
 
     public static RealmList newInstance() {
         RealmList RealmList = new RealmList();
@@ -78,21 +72,8 @@ public class ItemListFragment extends Fragment {
         buttonEdit = view.findViewById(R.id.buttonEdit);
         buttonDel = view.findViewById(R.id.buttonEliminar);
 
+        //Listar
         movieRealm=listarMovies();
-
-
-        /*MovieAdapter.OnItemClickListener onItemClickListener = new MovieAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(MovieRealm item) {
-                EditItemFragment editItemFragment = new EditItemFragment();
-                FragmentManager fm = getActivity().getSupportFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.frameLayout, editItemFragment);
-                ft.addToBackStack(null);
-                ft.commit();
-                Toast.makeText(getContext(), "Clickando", Toast.LENGTH_SHORT).show();
-            }
-        };*/
 
         movieAdapter=new MovieAdapter(movieRealm);
 
@@ -189,41 +170,4 @@ public class ItemListFragment extends Fragment {
         return realm.copyFromRealm(movies);
     }
 
-
-
-
-
-    /*@Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ItemListSingleton.getItemList().loadItems(context);
-        rootView = inflater.inflate(R.layout.fragment_item_list, container, false);
-        RecyclerView recycler = (RecyclerView) rootView.findViewById(R.id.itemList);
-        ItemAdapter.OnItemClickListener onItemClickListener = new ItemAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(Item item) {
-                DialogFragment editItemFragment = new EditItemFragment(item);
-                FragmentManager fm = context.getSupportFragmentManager();
-                editItemFragment.show(fm, "EditDialogFragment");
-            }
-        };
-
-        ItemAdapter.OnItemLongClickListener onItemLongClickListener = new ItemAdapter.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(Item item) {
-                ItemListSingleton itemList = ItemListSingleton.getInstance();
-                int itemIndex = itemList.getItemList().getIndex(item);
-                itemList.getItemList().deleteItem(itemIndex);
-                itemList.getItemList().saveItems(context);
-                Toast.makeText(getContext(), item.getTitle() + " se ha eliminado.", Toast.LENGTH_SHORT).show();
-                FragmentManager fm = context.getSupportFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.frameLayout, new ItemListFragment());
-                ft.commit();
-                return true;
-            }
-        };
-
-        recycler.setAdapter(new ItemAdapter(onItemClickListener, onItemLongClickListener));
-        return rootView;
-    }*/
 }
