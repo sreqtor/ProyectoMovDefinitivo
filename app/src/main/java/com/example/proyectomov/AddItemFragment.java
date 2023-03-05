@@ -38,7 +38,6 @@ import java.io.IOException;
 import java.util.UUID;
 
 public class AddItemFragment extends Fragment {
-    //private String id= UUID.randomUUID().toString();
     private static Realm myRealm;
     private String id;
     private int cont=0;
@@ -67,8 +66,6 @@ public class AddItemFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //myRealm = Realm.getDefaultInstance();
-
 
     }
 
@@ -110,7 +107,6 @@ public class AddItemFragment extends Fragment {
                     return;
                 }
 
-                //addMovieToDB(title_str, maker_str, description_str);
                 Toast.makeText(context, "Añadido con exito", Toast.LENGTH_SHORT).show();
                 ResetFragmentFields();
 
@@ -127,45 +123,12 @@ public class AddItemFragment extends Fragment {
                         myMovie.setTitulo(title_str);
                         myMovie.setDirector(maker_str);
                         myMovie.setGenero(description_str);
-                        /*myMovie.setTitulo(title.getText().toString());
-                        myMovie.setDirector(maker.getText().toString());
-                        myMovie.setGenero(description.getText().toString());*/
 
                     }
                 });
 
             }
         });
-        /*saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //saveItem(view);
-                String title_str = title.getText().toString();
-                String maker_str = maker.getText().toString();
-                String description_str = description.getText().toString();
-
-                if (title_str.equals("")) {
-                    title.setError("Obligatorio");
-                    return;
-                }
-
-                if (maker_str.equals("")) {
-                    maker.setError("Obligatorio");
-                    return;
-                }
-
-                if (description_str.equals("")) {
-                    description.setError("Obligatorio");
-                    return;
-                }
-
-                addMovieToDB(title_str, maker_str, description_str);
-                Toast.makeText(context, "Añadido con exito", Toast.LENGTH_SHORT).show();
-                ResetFragmentFields();
-
-            }
-        });*/
-
 
         ActivityResultLauncher<Intent> cameraLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
             @Override
@@ -245,11 +208,7 @@ public class AddItemFragment extends Fragment {
                 }
 
 
-                //MovieRealm movieRealm = realmTransaction.createObject(MovieRealm.class, title_txt);
-                //movieRealm.setTitulo(title_txt);
-                //movieRealm.setDirector(director_txt);
-                //movieRealm.setGenero(genero_txt);
-                //movieRealm.setImage_base64(imagen_img);
+
             }
         });
     }
@@ -275,43 +234,14 @@ public class AddItemFragment extends Fragment {
         }
 
         try {
-            //Item item = new Item(title_str, maker_str, description_str, image, null );
-            //ItemListSingleton itemList = ItemListSingleton.getInstance();
-            //itemList.getItemList().addItem(item);
-            //itemList.getItemList().saveItems(context);
-            //ResetFragmentFields();
 
-            //MovieRealm movieRealm = new MovieRealm(id, title_str, maker_str, description_str, image);
-            //RealmListSingleton realmList = RealmListSingleton.getInstance();
-
-            //MovieRealm mr = new MovieRealm(); //de momento de sobrescribe cada vez que guardas (prueba)
             MovieRealm movie = new MovieRealm(title_str, maker_str, description_str, image);
             Realm realm = Realm.getDefaultInstance();
             realm.copyToRealm(movie);
             Toast.makeText(context, "Añadido con exito", Toast.LENGTH_SHORT).show();
             ResetFragmentFields();
 
-            /*mr.setId(id);
-            mr.setTitulo(title_str); //probar a pasar los campos a mano
-            mr.setDirector(maker_str);
-            mr.setGenero(description_str);
-            ResetFragmentFields();*/
-            //movie.setId(id);
-            /*movie.setTitulo(title_str); //probar a pasar los campos a mano
-            movie.setDirector(maker_str);
-            movie.setGenero(description_str);
-            ResetFragmentFields();*/
-            //RealmList.addMovie(title_str, maker_str, description_str);
-            //RealmList.aniadir(mr.getId(), mr.getTitulo(), mr.getDirector(), mr.getGenero(), mr.getImage_base64());
-            /*realm.executeTransaction(new Realm.Transaction() {
-                @Override
-                public void execute(Realm realm) {
-                    realm.copyToRealm(mr);
-                    //RealmList.aniadir(id, title_str, maker_str, description_str, image);
-                }
-            });*/
-            //https://www.geeksforgeeks.org/how-to-install-and-add-data-to-realm-database-in-android/
-            //RealmList.listar();
+
 
         }
         catch (Exception e) {

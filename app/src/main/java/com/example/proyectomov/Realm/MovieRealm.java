@@ -21,28 +21,12 @@ public class MovieRealm extends RealmObject {
 
     public MovieRealm() {}
 
-    /*public MovieRealm(String id, String titulo, String director, String genero, String image_base64) {
-        this.id = id;
-        this.titulo = titulo;
-        this.director = director;
-        this.genero = genero;
-        this.image_base64 = image_base64;
-    }*/
-
     public MovieRealm(String titulo, String director, String genero, String image_base64) {
         this.titulo = titulo;
         this.director = director;
         this.genero = genero;
         this.image_base64 = image_base64;
     }
-
-    /*public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }*/
 
     public String getTitulo() {
         return titulo;

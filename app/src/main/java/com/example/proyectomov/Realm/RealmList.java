@@ -5,11 +5,6 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 
-import com.example.proyectomov.AddItemFragment;
-import com.example.proyectomov.Item;
-import com.example.proyectomov.ItemListSingleton;
-import com.example.proyectomov.R;
-
 import io.realm.Realm;
 import io.realm.RealmResults;
 
@@ -39,12 +34,6 @@ public class RealmList {
                     movie.getGenero();
                 }
 
-
-                //MovieRealm movieRealm = realmTransaction.createObject(MovieRealm.class, title_txt);
-                //movieRealm.setTitulo(title_txt);
-                //movieRealm.setDirector(director_txt);
-                //movieRealm.setGenero(genero_txt);
-                //movieRealm.setImage_base64(imagen_img);
             }
         });
     }
@@ -116,30 +105,5 @@ public class RealmList {
         });
     }
 
-    /*
 
-    public static void aniadir(String id, String titulo, String director, String genero, String image_base64){
-        MovieRealm pelicula = new MovieRealm(id_txt, title_txt, genero_txt, director_txt, imagen_img);
-            Realm realm = Realm.getDefaultInstance();
-            realm.executeTransaction(new Realm.Transaction() {
-                @Override
-                public void execute(Realm realmTransaction) {
-                    realmTransaction.insert(pelicula);
-                }
-            });
-    }
-
-    public static void actualizar(){
-        Realm realm = Realm.getDefaultInstance();
-        realm.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realmTransaction) {
-                MovieRealm pelicula = realmTransaction.where(MovieRealm.class)
-                        .equalTo("id", id_txt)
-                        .findFirst();
-                pelicula.setTitulo("Título");
-                pelicula.setDirector("Director");
-            }
-        });
-    }*/
 }

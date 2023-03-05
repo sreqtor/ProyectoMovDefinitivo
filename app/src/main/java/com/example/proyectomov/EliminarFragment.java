@@ -16,11 +16,6 @@ import com.example.proyectomov.Realm.MovieRealm;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link EliminarFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class EliminarFragment extends Fragment {
     private static final String ARG1 = "p1";
     private static final String ARG2 = "p2";
