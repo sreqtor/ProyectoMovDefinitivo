@@ -18,6 +18,6 @@
         android:title="@string/cuenta" />
     <item
         android:id="@+id/settingsFragment"
-        android:icon="@drawable/cog_solid_24"
+        android:icon="@drawable/claqueta"
         android:title="@string/ajustes" />
 </menu>

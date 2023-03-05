@@ -37,6 +37,7 @@ public class ItemListFragment extends Fragment {
     List<MovieRealm> movieRealm;
 
     Button buttonEdit;
+    Button buttonDel;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -75,6 +76,7 @@ public class ItemListFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         buttonEdit = view.findViewById(R.id.buttonEdit);
+        buttonDel = view.findViewById(R.id.buttonEliminar);
 
         movieRealm=listarMovies();
 
@@ -96,6 +98,7 @@ public class ItemListFragment extends Fragment {
 
         recyclerView.setAdapter(movieAdapter);
 
+        //Editar
         buttonEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -108,6 +111,18 @@ public class ItemListFragment extends Fragment {
             }
         });
 
+        //Eliminar
+        buttonDel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EliminarFragment eliminarFragment = new EliminarFragment();
+                FragmentManager fm = getActivity().getSupportFragmentManager();
+                FragmentTransaction ft = fm.beginTransaction();
+                ft.replace(R.id.frameLayout, eliminarFragment);
+                ft.addToBackStack(null);
+                ft.commit();
+            }
+        });
 
         return view;
     }

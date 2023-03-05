@@ -11,6 +11,11 @@
         android:id="@+id/buttonCierre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cerrar Sesión" />
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="5dp"
+        android:backgroundTint="@color/teal_700"
+        android:fontFamily="@font/bungee"
+        android:text="Cerrar Sesión"
+        android:textAppearance="@android:style/TextAppearance.Medium" />
 
 </FrameLayout>
