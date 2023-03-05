@@ -87,6 +87,7 @@ public class userFragment extends Fragment {
 
         //no muestra
         //txtUsuario.setText("Nombre de usuario: "+name);
+        txtUsuario.setText(name);
 
 
 
