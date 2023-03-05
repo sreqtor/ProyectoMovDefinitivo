@@ -10,8 +10,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserInfo;
+
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,6 +36,8 @@ public class userFragment extends Fragment {
 
 
     FirebaseAuth firebaseAuth;
+    FirebaseUser user;
+    private TextView txtUsuario;
     Button cierre;
 
 
@@ -66,9 +73,21 @@ public class userFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        // Inflate the layout for this fragment
+
         View view =  inflater.inflate(R.layout.fragment_user, container, false);
-        cierre = view.findViewById(R.id.buttonCierre); //Da error
+
+        txtUsuario = view.findViewById(R.id.textViewUsuario);
+
+        cierre = view.findViewById(R.id.buttonCierre);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        user = firebaseAuth.getCurrentUser();
+
+        String name = user.getDisplayName();
+
+        //no muestra
+        //txtUsuario.setText("Nombre de usuario: "+name);
+
 
 
         cierre.setOnClickListener(new View.OnClickListener() {

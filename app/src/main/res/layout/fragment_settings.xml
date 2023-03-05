@@ -1,14 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SettingsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Fragmento Ajutes" />
+        android:layout_height="532dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:orientation="vertical">
 
+        <EditText
+            android:id="@+id/txtApi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Bucar..."
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/buttonSearchApi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/teal_700"
+            android:fontFamily="@font/bungee"
+            android:text="Buscar" />
+
+        <ImageView
+            android:id="@+id/imageViewPokemon"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            tools:src="@tools:sample/avatars" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtDevolver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/teal_700"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/bungee"
+            android:textSize="15sp" />
+
+    </LinearLayout>
 </FrameLayout>
