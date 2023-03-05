@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context=".EditItemFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/titleLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/title_tv"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bungee"
+                android:gravity="center_vertical"
+                android:text="@string/title"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:textColor="@color/teal_700" />
+
+            <EditText
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bungee"
+                android:hint="@string/title"
+                android:inputType="text"
+                android:maxLength="24"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:textColor="@color/teal_500"
+                android:textColorHint="@color/teal_less_500" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/titleLinear2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/title_tv2"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bungee"
+                android:gravity="center_vertical"
+                android:text="Nuevo título"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:textColor="@color/teal_700" />
+
+            <EditText
+                android:id="@+id/title2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bungee"
+                android:hint="Nuevo título"
+                android:inputType="text"
+                android:maxLength="24"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:textColor="@color/teal_500"
+                android:textColorHint="@color/teal_less_500" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/makerLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/titleLinear">
+
+            <TextView
+                android:id="@+id/maker_tv"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bungee"
+                android:gravity="center_vertical"
+                android:text="@string/maker"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:textColor="@color/teal_700" />
+
+            <EditText
+                android:id="@+id/maker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bungee"
+                android:hint="@string/maker"
+                android:inputType="text"
+                android:maxLength="24"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:textColor="@color/teal_500"
+                android:textColorHint="@color/teal_less_500" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/descriptionLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/makerLinear">
+
+            <TextView
+                android:id="@+id/description_tv"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bungee"
+                android:gravity="center_vertical"
+                android:text="@string/description"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:textColor="@color/teal_700" />
+
+            <EditText
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bungee"
+                android:hint="@string/description"
+                android:inputType="text"
+                android:maxLength="24"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                android:textColor="@color/teal_500"
+                android:textColorHint="@color/teal_less_500" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="94dp"
+            android:layout_height="91dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:label="@string/image_icon"
+            app:layout_constraintTop_toBottomOf="@id/descriptionLinear" />
+
+        <LinearLayout
+            android:id="@+id/addcancelLinear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/image_view">
+
+            <ImageButton
+                android:id="@+id/add_gallery_image_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:background="@drawable/selector_gallery"
+                android:onClick="addGalleryPhoto" />
+
+            <ImageButton
+                android:id="@+id/add_image_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:background="@drawable/selector_camera"
+                android:onClick="addPhoto" />
+
+            <ImageButton
+                android:id="@+id/cancel_image_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:background="@drawable/selector_x"
+                android:onClick="deletePhoto" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/addcancelLinear">
+
+            <Button
+                android:id="@+id/save_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/teal_700"
+                android:fontFamily="@font/bungee"
+                android:onClick="saveItem"
+                android:text="@string/save"
+                android:textAppearance="@android:style/TextAppearance.Medium" />
+
+            <Button
+                android:id="@+id/cancel_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/teal_700"
+                android:fontFamily="@font/bungee"
+                android:onClick="cancelItem"
+                android:text="@string/cancel"
+                android:textAppearance="@android:style/TextAppearance.Medium" />
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

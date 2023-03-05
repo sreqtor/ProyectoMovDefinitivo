@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/addItemFragment2">
+    <fragment
+        android:id="@+id/addItemFragment2"
+        android:name="com.example.proyectomov.AddItemFragment"
+        android:label="fragment_add_item"
+        tools:layout="@layout/fragment_add_item" />
+    <dialog
+        android:id="@+id/editItemFragment"
+        android:name="com.example.proyectomov.EditItemFragment"
+        android:label="fragment_edit_item"
+        tools:layout="@layout/fragment_edit_item" />
+    <fragment
+        android:id="@+id/userFragment2"
+        android:name="com.example.proyectomov.userFragment"
+        android:label="fragment_user"
+        tools:layout="@layout/fragment_user" />
+    <fragment
+        android:id="@+id/settingsFragment2"
+        android:name="com.example.proyectomov.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <activity
+        android:id="@+id/ventInicial"
+        android:name="com.example.proyectomov.VentInicial"
+        android:label="activity_vent_inicial"
+        tools:layout="@layout/activity_vent_inicial" />
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.proyectomov.MainActivity"
+        android:label="registro"
+        tools:layout="@layout/registro" />
+    <activity
+        android:id="@+id/recuperarcont"
+        android:name="com.example.proyectomov.recuperarcont"
+        android:label="recuperarcont"
+        tools:layout="@layout/recuperarcont" />
+    <activity
+        android:id="@+id/iniciosesion3"
+        android:name="com.example.proyectomov.iniciosesion"
+        android:label="iniciosesion" />
+    <activity
+        android:id="@+id/registro3"
+        android:name="com.example.proyectomov.registro"
+        android:label="registro" />
+</navigation>

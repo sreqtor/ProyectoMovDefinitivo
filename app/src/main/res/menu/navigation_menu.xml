@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/itemListFragment"
+        android:icon="@drawable/home_solid_24"
+        android:title="@string/inicio" />
+    <item
+        android:id="@+id/addFragment"
+        android:icon="@drawable/plus_circle_solid_24"
+        android:iconTint="@color/bottom_nav_color"
+        android:title="@string/aniadir" />
+    <item
+        android:id="@+id/userFragment"
+        android:icon="@drawable/user_solid_24"
+        android:title="@string/cuenta" />
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/cog_solid_24"
+        android:title="@string/ajustes" />
+</menu>
